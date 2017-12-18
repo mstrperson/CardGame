@@ -15,7 +15,7 @@ namespace CardGame
         {
             // the default shuffle algorithm is RifleShuffle.
             myShuffler = RifleShuffle.RifleShuffler;
-
+            TheDeck = new List<Card>();
             foreach(Card.Suit suit in Card.Suit.Suits)
             {
                 foreach(Card.Value value in aceHigh?Card.Value.AcesHighValues:Card.Value.AcesLowValues)
