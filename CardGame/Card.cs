@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CardGame
 {
-    public class Card : IComparable
+    public class Card : IComparable<Card>
     {
         #region Helper Classes
         public class Suit
@@ -79,28 +79,20 @@ namespace CardGame
         }
         #endregion
 
-        public Value myValue { get; protected set; }
-        public Suit mySuit { get; protected set; }
+        public Value MyValue { get; protected set; }
+        public Suit MySuit { get; protected set; }
 
         public Card(Suit suit, Value value)
         {
-            myValue = value;
-            mySuit = suit;
+            MyValue = value;
+            MySuit = suit;
         }
 
-        public override string ToString() => String.Format("{0} of {1}", myValue, mySuit);
+        public override string ToString() => String.Format("{0} of {1}", MyValue, MySuit);
 
-        int IComparable.CompareTo(object obj)
+        int IComparable<Card>.CompareTo(Card obj)
         {
-            // if the object is not an instance of the Card class
-            if(!(obj is Card))
-            {
-                throw new ArgumentException("Cannot compare a Card to anything but a Card.");
-            }
-            else
-            {
-                return this.myValue.value - ((Card)obj).myValue.value;
-            }
+            return this.MyValue.value - ((Card)obj).MyValue.value;
         }
     }
 }
