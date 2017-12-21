@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardGameConsoleApp", "CardG
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cards", "Cards\Cards.csproj", "{261B794F-40BA-4809-8BB4-50DD7EA03C52}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualCards", "WindowsFormsApp1\VisualCards.csproj", "{EC2D1881-EEB1-409C-8684-AC828FFD6B74}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{261B794F-40BA-4809-8BB4-50DD7EA03C52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{261B794F-40BA-4809-8BB4-50DD7EA03C52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{261B794F-40BA-4809-8BB4-50DD7EA03C52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC2D1881-EEB1-409C-8684-AC828FFD6B74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC2D1881-EEB1-409C-8684-AC828FFD6B74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC2D1881-EEB1-409C-8684-AC828FFD6B74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC2D1881-EEB1-409C-8684-AC828FFD6B74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -15,6 +15,11 @@ namespace CardGameConsoleApp
         {
             Deck deck = new Deck();
 
+            foreach(Card card in deck)
+            {
+                Console.WriteLine(card);
+            }
+
             while (deck.Count > 5)
             {
                 deck.Shuffle();

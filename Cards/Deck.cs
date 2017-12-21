@@ -5,8 +5,15 @@ using System.Text;
 
 namespace CardGame
 {
+    /// <summary>
+    /// Deck represents a deck of cards.  This implements the IEnumerable interface so that you can use it directly in foreach statements:
+    /// e.g.
+    /// 
+    /// foreach(Card card in deck) { ... }
+    /// </summary>
     public class Deck : IEnumerable<Card>
     {
+
         public List<Card> TheDeck;
 
         public IShuffleAlgorithm myShuffler;
@@ -31,6 +38,12 @@ namespace CardGame
         /// <param name="card"></param>
         public void Add(Card card) => TheDeck.Add(card);
 
+        /// <summary>
+        /// Add 
+        /// </summary>
+        /// <param name="cards"></param>
+        public void AddRange(IEnumerable<Card> cards) => TheDeck.AddRange(cards);
+        
         /// <summary>
         /// Deals the top card from the deck.
         /// </summary>
@@ -75,6 +88,7 @@ namespace CardGame
 
     public class DeckException : Exception
     {
-        public DeckException(String message = null, Exception innerException = null) : base(message, innerException) { }
+        public DeckException(String message = null, Exception innerException = null) 
+            : base(message, innerException) { }
     }
 }
