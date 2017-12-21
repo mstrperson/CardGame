@@ -50,7 +50,7 @@ namespace CardGame
         /// <returns></returns>
         public List<Card> Deal(int count)
         {
-            if (count > TheDeck.Count) throw new InvalidOperationException("The deck doesn't have that many cards.");
+            if (count > TheDeck.Count) throw new DeckException("The deck doesn't have that many cards.");
 
             List<Card> cards = TheDeck.GetRange(0, count);
             TheDeck.RemoveRange(0, count);
@@ -71,5 +71,10 @@ namespace CardGame
 
         IEnumerator<Card> IEnumerable<Card>.GetEnumerator() => TheDeck.GetEnumerator();
         IEnumerator IEnumerable.GetEnumerator() => TheDeck.GetEnumerator();
+    }
+
+    public class DeckException : Exception
+    {
+        public DeckException(String message = null, Exception innerException = null) : base(message, innerException) { }
     }
 }
