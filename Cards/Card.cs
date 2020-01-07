@@ -21,13 +21,13 @@ namespace CardGame
             public static List<Suit> Suits = new List<Suit>()
             { Spades, Hearts, Clubs, Diamonds };
 
-            private String title;
+            private string title;
             private Suit(string title)
             {
                 this.title = title;
             }
 
-            public override String ToString() => this.title;
+            public override string ToString() => this.title;
 
             public override bool Equals(object obj)
             {
@@ -46,7 +46,7 @@ namespace CardGame
         public class Value
         {
             public readonly int value;
-            public readonly String title;
+            public readonly string title;
 
             private Value(int value, string title)
             {
@@ -111,7 +111,7 @@ namespace CardGame
             MySuit = suit;
         }
 
-        public override string ToString() => String.Format("{0} of {1}", MyValue, MySuit);
+        public override string ToString() => string.Format("{0} of {1}", MyValue, MySuit);
 
         int IComparable<Card>.CompareTo(Card obj)
         {

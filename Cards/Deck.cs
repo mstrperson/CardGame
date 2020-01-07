@@ -88,7 +88,7 @@ namespace CardGame
 
     public class DeckException : Exception
     {
-        public DeckException(String message = null, Exception innerException = null) 
+        public DeckException(string message = null, Exception innerException = null) 
             : base(message, innerException) { }
     }
 }

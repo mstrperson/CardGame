@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
         public VisualCard(Suit suit, Value value)
             :base(suit, value)
         {
-            String fileName = String.Format("\\CardImages\\{0}{1}.png", value.value == 10? "10" : value.ToString()[0].ToString(), suit.ToString()[0]);
+            string fileName = string.Format("\\CardImages\\{0}{1}.png", value.value == 10? "10" : value.ToString()[0].ToString(), suit.ToString()[0]);
             CardImage = Image.FromFile(Environment.CurrentDirectory + fileName);
         }
 

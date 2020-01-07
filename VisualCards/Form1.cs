@@ -73,7 +73,7 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    this.ScoreLabel.Text = String.Format("{0}", score);
+                    this.ScoreLabel.Text = string.Format("{0}", score);
                 }
             }
             else
