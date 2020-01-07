@@ -13,19 +13,33 @@ namespace CardGame
     /// </summary>
     public class Deck : IEnumerable<Card>
     {
+        /// <summary>
+        /// THE DECK...all the cards in the deck.
+        /// </summary>
+        private List<Card> TheDeck;
 
-        public List<Card> TheDeck;
+        /// <summary>
+        /// How many cards are left in this deck.
+        /// </summary>
+        public int Count => TheDeck.Count;
 
-        public IShuffleAlgorithm myShuffler;
+        /// <summary>
+        /// Algorithm you're using for Shuffling this deck.
+        /// </summary>
+        private IShuffleAlgorithm myShuffler;
 
-        public Deck(bool aceHigh = false)
+        public Deck(bool aceHigh = false, IShuffleAlgorithm shuffleAlgorithm = null)
         {
             // the default shuffle algorithm is RifleShuffle.
-            myShuffler = RifleShuffle.RifleShuffler;
+            if (shuffleAlgorithm == null)
+                myShuffler = new RiffleShuffler();
+            else
+                myShuffler = shuffleAlgorithm;
             TheDeck = new List<Card>();
             foreach(Card.Suit suit in Card.Suit.Suits)
             {
-                foreach(Card.Value value in aceHigh?Card.Value.AcesHighValues:Card.Value.AcesLowValues)
+                // what the F(^!*$ is going on in this line................. what is the `?` doing there....
+                foreach(Card.Value value in (aceHigh ? Card.Value.AcesHighValues : Card.Value.AcesLowValues))
                 {
                     TheDeck.Add(new Card(suit, value));
                 }
@@ -39,7 +53,7 @@ namespace CardGame
         public void Add(Card card) => TheDeck.Add(card);
 
         /// <summary>
-        /// Add 
+        /// Add a bunch of cards to this deck.
         /// </summary>
         /// <param name="cards"></param>
         public void AddRange(IEnumerable<Card> cards) => TheDeck.AddRange(cards);
@@ -71,7 +85,6 @@ namespace CardGame
             return cards;
         }
 
-        public int Count => TheDeck.Count;
 
         /// <summary>
         /// Shuffles the deck using the elected shuffler algorithm.
@@ -81,7 +94,8 @@ namespace CardGame
         {
             myShuffler.Shuffle(ref TheDeck);
         }
-
+        
+        // Don't worry about these methods, they're used behind the scenes and aren't important right now.
         IEnumerator<Card> IEnumerable<Card>.GetEnumerator() => TheDeck.GetEnumerator();
         IEnumerator IEnumerable.GetEnumerator() => TheDeck.GetEnumerator();
     }

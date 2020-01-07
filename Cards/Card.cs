@@ -43,10 +43,10 @@ namespace CardGame
         /// Values are comparable and implement boolean comparison operators.
         /// for use in Scoring, Values also implement arithmetic operators + and - and return integers.
         /// </summary>
-        public class Value
+        public class Value : IEquatable<Value>
         {
-            public readonly int value;
-            public readonly string title;
+            private int value;
+            private string title;
 
             private Value(int value, string title)
             {
@@ -72,6 +72,29 @@ namespace CardGame
             public static int operator +(Value a, int b) => a.value + b;
 
             public override string ToString() => this.title;
+
+            public override bool Equals(object obj)
+            {
+                return Equals(obj as Value);
+            }
+
+            public bool Equals(Value other)
+            {
+                return other != null &&
+                       value == other.value;
+            }
+
+            /// <summary>
+            /// This is auto generated and you dont need to worry about it at this point.
+            /// </summary>
+            /// <returns></returns>
+            public override int GetHashCode()
+            {
+                var hashCode = 972665443;
+                hashCode = hashCode * -1521134295 + value.GetHashCode();
+                hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(title);
+                return hashCode;
+            }
 
             public static Value AceLow = new Value(1, "Ace");
             public static Value Two = new Value(2, "2");
@@ -102,20 +125,61 @@ namespace CardGame
         }
         #endregion
 
+        /// <summary>
+        /// Value of this Card.
+        /// </summary>
         public Value MyValue { get; protected set; }
+        /// <summary>
+        /// Suit of this card.
+        /// </summary>
         public Suit MySuit { get; protected set; }
 
+        /// <summary>
+        /// Initialize a Card to be played with.
+        /// </summary>
+        /// <param name="suit">the Suit</param>
+        /// <param name="value">the Value</param>
         public Card(Suit suit, Value value)
         {
             MyValue = value;
             MySuit = suit;
         }
 
+        /// <summary>
+        /// Get a text representation of this card.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString() => string.Format("{0} of {1}", MyValue, MySuit);
 
-        int IComparable<Card>.CompareTo(Card obj)
-        {
-            return this.MyValue - ((Card)obj).MyValue;
-        }
+        /// <summary>
+        /// Compare two Cards.  Returns the difference in their values.
+        /// Ignores suit.
+        /// </summary>
+        /// <param name="obj">card to compare to.</param>
+        /// <returns></returns>
+        int CompareTo(Card obj) => this.MyValue - obj.MyValue;
+
+        /// <summary>
+        /// Implement the IComparable interface using the CompareTo method.
+        /// This allows you to do things like auto-sort lists of cards.
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        int IComparable<Card>.CompareTo(Card other) => this.CompareTo(other);
+
+        /// <summary>
+        /// Determine if two cards are the same suit and value.
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        bool Equals(Card other) => this.MySuit.Equals(other.MySuit) && this.MyValue == other.MyValue;
+
+        /// <summary>
+        /// Determines if two cards have the same value;
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        bool EqualValue(Card other) => this.CompareTo(other) == 0;
+
     }
 }

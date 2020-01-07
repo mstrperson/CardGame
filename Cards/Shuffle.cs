@@ -15,12 +15,8 @@ namespace CardGame
     /// <summary>
     /// Shuffles the cards by randomly swaping cards in the deck.
     /// </summary>
-    public class RandomShuffle : IShuffleAlgorithm
+    public class RandomShuffler : IShuffleAlgorithm
     {
-        /// <summary>
-        /// Shuffles the cards by randomly swaping cards in the deck.
-        /// </summary>
-        public static RandomShuffle RandomShuffler = new RandomShuffle();
 
         protected Random rand = new Random();
         public int IterationCount = 3;
@@ -50,16 +46,10 @@ namespace CardGame
     /// Rifle Shuffle Simpulates shuffling a deck of cards by spliting the deck 
     /// and then inserting the cards a couple at a time from each half back into the original deck.
     /// </summary>
-    public class RifleShuffle : IShuffleAlgorithm
+    public class RiffleShuffler : IShuffleAlgorithm
     {
-        /// <summary>
-        /// Rifle Shuffle Simpulates shuffling a deck of cards by spliting the deck 
-        /// and then inserting the cards a couple at a time from each half back into the original deck.
-        /// </summary>
-        public static RifleShuffle RifleShuffler = new RifleShuffle();
-
         protected Random rand = new Random();
-        public int IterationCount = 7;
+        public int Repetitions = 7;
         
         /// <summary>
         /// Rifle Shuffle Simpulates shuffling a deck of cards by spliting the deck 
@@ -67,7 +57,7 @@ namespace CardGame
         /// </summary>
         public void Shuffle(ref List<Card> deck)
         {
-            for (int i = 0; i < IterationCount; i++)
+            for (int i = 0; i < Repetitions; i++)
             {
                 int splitPoint = deck.Count / 2 + (rand.Next(6) - 3);
                 List<Card> a = deck.GetRange(0, splitPoint);

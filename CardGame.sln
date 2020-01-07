@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardGameConsoleApp", "CardG
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cards", "Cards\Cards.csproj", "{261B794F-40BA-4809-8BB4-50DD7EA03C52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualCards", "WindowsFormsApp1\VisualCards.csproj", "{EC2D1881-EEB1-409C-8684-AC828FFD6B74}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualCards", "VisualCards\VisualCards.csproj", "{EC2D1881-EEB1-409C-8684-AC828FFD6B74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
