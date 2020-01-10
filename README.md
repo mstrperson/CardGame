@@ -114,7 +114,7 @@ Shuffles cards randomly by swapping cards in the deck.
 * Shuffle(ref List<Card> deck)        Makes random swaps throughout the deck by choosing two indexes at random and swaping them.  Algorithm swaps `IterationCount * deck.Count` times.
 
 ## RiffleShuffler : IShuffleAlgorithm
-Simulates the (Riffle Shuffle)[https://en.wikipedia.org/wiki/Shuffling#Riffle] method of shuffling cards
+Simulates the [Riffle Shuffle](https://en.wikipedia.org/wiki/Shuffling#Riffle) method of shuffling cards
 
 ### Properties
 * *rand* : Random                     Random Number Generator.
