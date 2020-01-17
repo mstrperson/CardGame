@@ -15,10 +15,6 @@ namespace CardGameConsoleApp
         {
             Deck deck = new Deck();
 
-            foreach(Card card in deck)
-            {
-                Console.WriteLine(card);
-            }
 
             while (deck.Count > 5)
             {
@@ -43,13 +39,17 @@ namespace CardGameConsoleApp
                     Console.WriteLine("Hit or Stand? [h/s]");
                     if (Console.ReadKey().KeyChar == 's') break;
 
+                    Console.WriteLine("\n___________________________");
+
                     hand.Add(deck.DealOne());
                 }
-
+                Console.WriteLine();
                 if (total > 21)
                     Console.WriteLine("Busted!");
                 else if (total == 21)
                     Console.WriteLine("BlackJack!");
+
+                Console.WriteLine("Press any key for next hand.");
 
                 Console.ReadKey();
             }
