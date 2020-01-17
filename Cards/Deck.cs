@@ -28,6 +28,11 @@ namespace CardGame
         /// </summary>
         private IShuffleAlgorithm myShuffler;
 
+        /// <summary>
+        /// Initialize a full deck of cards
+        /// </summary>
+        /// <param name="aceHigh">indicate whether the game plays Ace High or Ace Low (default: Ace Low)</param>
+        /// <param name="shuffleAlgorithm">Use a specialized shuffle algorithm.  (default:  RifleShuffler)</param>
         public Deck(bool aceHigh = false, IShuffleAlgorithm shuffleAlgorithm = null)
         {
             // the default shuffle algorithm is RifleShuffle.

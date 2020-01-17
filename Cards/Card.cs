@@ -98,6 +98,7 @@ namespace CardGame
             }
             #endregion
 
+            #region Card Values
             public static Value AceLow = new Value(1, "Ace");
             public static Value Two = new Value(2, "2");
             public static Value Three = new Value(3, "3");
@@ -112,6 +113,8 @@ namespace CardGame
             public static Value Queen = new Value(12, "Queen");
             public static Value King = new Value(13, "King");
             public static Value AceHigh = new Value(14, "Ace");
+            #endregion
+
 
             /// <summary>
             /// Statically defined Values in useful List format ordered from AceLow to King
