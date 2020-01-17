@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cards", "Cards\Cards.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualCards", "VisualCards\VisualCards.csproj", "{EC2D1881-EEB1-409C-8684-AC828FFD6B74}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacVersion", "MacVersion\MacVersion.csproj", "{076BE36A-FB57-4580-9AC6-B7AC0AC24071}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{EC2D1881-EEB1-409C-8684-AC828FFD6B74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC2D1881-EEB1-409C-8684-AC828FFD6B74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC2D1881-EEB1-409C-8684-AC828FFD6B74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{076BE36A-FB57-4580-9AC6-B7AC0AC24071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{076BE36A-FB57-4580-9AC6-B7AC0AC24071}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{076BE36A-FB57-4580-9AC6-B7AC0AC24071}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{076BE36A-FB57-4580-9AC6-B7AC0AC24071}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
