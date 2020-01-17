@@ -73,6 +73,7 @@ namespace CardGame
 
             public override string ToString() => this.title;
 
+            #region Auto Generated Equality Comparison Code
             public override bool Equals(object obj)
             {
                 return Equals(obj as Value);
@@ -95,6 +96,7 @@ namespace CardGame
                 hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(title);
                 return hashCode;
             }
+            #endregion
 
             public static Value AceLow = new Value(1, "Ace");
             public static Value Two = new Value(2, "2");
